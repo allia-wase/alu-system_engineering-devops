@@ -22,7 +22,7 @@ if ! grep -q "frontend alliane-frontend" /etc/haproxy/haproxy.cfg; then
     backend alliane-backend
         balance roundrobin
         server web-01 18.212.63.12:80 check
-        server web-02 54.152.152.232:80 check"
+        server web-02 44.211.248.36:80 check"
 
     # Append the configuration to haproxy.cfg
     echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
@@ -35,4 +35,3 @@ echo "ENABLED=1" | sudo tee /etc/default/haproxy
 
 # Restart HAProxy service
 sudo service haproxy restart
-
